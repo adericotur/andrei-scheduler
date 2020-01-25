@@ -12,4 +12,3 @@ pages:
       - dist/
   only:
     - master
-    - pages
