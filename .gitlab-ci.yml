@@ -1,14 +1,17 @@
-image: node:8.12.0
-pages:
-  cache:
-    paths:
-      - node_modules/
-  script:
-    - npm install -g @angular/cli@8.3.19
-    - npm install
-    - npm run buildProd
+image: node:latest
+stages:
+  - build
+  - test
+  - deploy
+
+before_script:
+  - npm install
+  - npm --prefix ./functions install
+
+app-build:
+  stage: build
   artifacts:
     paths:
       - dist/
-  only:
-    - master
+  script:
+    - npm run build
