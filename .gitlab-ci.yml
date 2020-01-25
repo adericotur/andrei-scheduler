@@ -12,7 +12,7 @@ pages:
   stage: deploy
   artifacts:
     paths:
-      - dist/
+      - public
   script:
     - npm run build
   only:
