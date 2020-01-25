@@ -16,4 +16,4 @@ pages:
   script:
     - npm run build
   only:
-    -master
+    - master
